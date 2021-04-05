@@ -1,0 +1,135 @@
+body{
+    font-family: Poppins;
+    font-size: 10pt;
+    font-weight: 500;
+}
+.welcome{
+    font-weight:800;
+    font-size: 21pt;
+}
+.login-title{
+    color: #001970;
+    font-weight:bold;
+    font-size: 21pt;
+}
+.login-form{
+    background: #E7E9F8 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 20px #00000029;
+}
+.form-login input{
+    margin-top: 25px;
+    padding: 5px;
+    border: 2px solid #001970;
+    border-radius: 5px;
+    outline: none;
+}
+.forgot{
+    color: #212529;
+    font-weight: bold;
+}
+.forgot:hover{
+    text-decoration: none;
+}
+.btn-login{
+    margin-top: 5px;
+    background: #001970;
+    padding: 5px 10px;
+    font-size: 9pt;
+    box-shadow: 0px 3px 20px #00000029;
+    border:none;
+    transition: 0.4s;
+}
+.btn-login:active,.btn-login:focus,.btn-login:hover{
+    outline: none;
+    background: #828692;
+}
+
+.form-login1 input{
+    margin-top: 5px;
+    padding: 5px;
+    border: 2px solid #001970;
+    border-radius: 5px;
+    outline: none;
+}
+.carousel-caption-custom{
+    position: absolute;
+    top: 40%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /* text-align: center; */
+    color: #fff;
+}
+.caption{
+    font-size: 26pt;
+    font-weight: 800;
+}
+.desc{
+    font-size: 16pt;
+    font-weight: 500;
+}
+.btn-custom1{
+    box-shadow: 0px 5px 20px #59882B1A;
+    background: transparent linear-gradient(90deg, #001970 0%, #5C6BC0 100%);
+}
+.btn-custom1:hover{
+    box-shadow: 0px 5px 20px #273b131a;
+    background: transparent linear-gradient(90deg, #010616 0%, #5C6BC0 100%);
+}
+.oval{
+    font-size: 20pt;
+    font-weight: 600;
+    height: 40px;
+    width: 40px;
+    float: left;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 2px;
+    color: rgb(41, 40, 40);
+    background: transparent linear-gradient(90deg, #d19c28 0%, #e7cf47 100%);
+    margin-right: 10px;
+}
+.on{
+    color: white;
+    background: transparent linear-gradient(90deg, #001970 0%, #5C6BC0 100%);
+}
+.card-custom{
+    margin-top: 10px;
+    padding: 20px;
+    height: 280px;
+    background: #EEEEEE;
+    border-radius: 10px;
+}
+.card-custom-on{
+    height: 280px;
+    background: #FFFFFF;
+    box-shadow: 0px 10px 20px #00000014;
+    border-radius: 10px 10px 3px 3px;
+    border-bottom: 4px solid #001970;
+}
+.link-more{
+    color: #cf9d05;
+    text-decoration: none;
+}
+.link-more:hover{
+    color: #b68a07;
+    text-decoration: none;
+}
+.input{
+    padding: 5px;
+    border: 2px solid #001970;
+    border-radius: 5px;
+    outline: none;
+    width: 100%;
+}
+.btn-pesan{
+    border-radius: 25px;
+    background: #001970 0% 0% no-repeat padding-box;
+    box-shadow: 0px 10px 6px #00000029;
+    color: #FFFFFF;
+    padding-right: 15px;
+    padding-left:15px;
+}
+.btn-pesan:hover{
+    background: #021044 0% 0% no-repeat padding-box;
+    color: #FFFFFF;
+}
