@@ -101,8 +101,8 @@ CREATE TABLE `pemesanan` (
 --
 
 INSERT INTO `pemesanan` (`id`, `user_id`, `admin_id`, `invoice`, `ukuran`, `lantai`, `luas_bangunan`, `id_model`, `kamar`, `kamar_mandi`, `garasi`, `referensi`, `pesan`, `tanggal`, `status`, `bukti_pembayaran`, `desain_rumah`, `ket_ditolak`) VALUES
-(1, 4, 4, 'BB001', '10x5', '1', '100', 2, '2', '2', '1', 'https://www.emporioarchitect.com/desain-rumah/desain-rumah-modern-1-lantai-bapak-annas-di-jepara-jaw', NULL, '2021-04-04 11:38:30', 3, NULL, 'pdf-2021-04-05_14:45:02.pdf', 'Gagal'),
-(2, 4, 4, 'BB002', '10x5', '1', '100', 2, '2', '2', '1', 'https://www.emporioarchitect.com/desain-rumah/desain-rumah-modern-1-lantai-bapak-annas-di-jepara-jaw', NULL, '2021-04-04 11:41:45', 2, 'Image-2021-04-05_15:18:18.png', NULL, 'Sedang di proses'),
+(1, 4, 4, 'BB001', '10x5', '1', '100', 2, '2', '2', '1', 'https://www.emporioarchitect.com/desain-rumah/desain-rumah-modern-1-lantai-bapak-annas-di-jepara-jaw', NULL, '2021-04-04 11:38:30', 3, NULL, 'pdf-2021-04-05_14_45_02.pdf', 'Gagal'),
+(2, 4, 4, 'BB002', '10x5', '1', '100', 2, '2', '2', '1', 'https://www.emporioarchitect.com/desain-rumah/desain-rumah-modern-1-lantai-bapak-annas-di-jepara-jaw', NULL, '2021-04-04 11:41:45', 2, 'Image-2021-04-05_15_18_18.png', NULL, 'Sedang di proses'),
 (3, 4, NULL, 'BB003', '10x5', '1', '100', 2, '3', '2', '1', 'https://www.emporioarchitect.com/desain-rumah/desain-rumah-modern-1-lantai-bapak-annas-di-jepara-jaw', NULL, '2021-04-04 11:50:52', 1, NULL, NULL, NULL),
 (4, 4, NULL, 'B004', '10x5', '', '100', 2, '3', '2', '1', 'https://www.emporioarchitect.com/desain-rumah/desain-rumah-modern-1-lantai-bapak-annas-di-jepara-jaw', NULL, '2021-04-07 15:00:56', 1, NULL, NULL, NULL);
 
@@ -145,8 +145,8 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `judul`, `image`, `isi`, `tanggal`, `slug`, `author`, `jenis`) VALUES
-(1, 'Rumah Ibu Kemuning', 'Image-2021-04-03_12:04:23.png', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2021-04-04 11:17:46', 'rumah-ibu-kemuning', 'Khoirul Amin', 1),
-(2, 'Rumah Pribadi', 'Image-2021-04-03_00:50:59.png', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2021-04-04 11:17:30', 'rumah-pribadi', 'Khoirul Amin', 2);
+(1, 'Rumah Ibu Kemuning', 'Image-2021-04-03_12_04_23.png', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2021-04-04 11_17_46', 'rumah-ibu-kemuning', 'Khoirul Amin', 1),
+(2, 'Rumah Pribadi', 'Image-2021-04-03_00_50_59.png', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2021-04-04 11_17_30', 'rumah-pribadi', 'Khoirul Amin', 2);
 
 -- --------------------------------------------------------
 
@@ -175,7 +175,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `NIK`, `tgl_lahir`, `nama`, `no_telp`, `alamat`, `role`, `timestamps`, `avatar`) VALUES
 (1, 'admin', '$2y$12$I0srEG/ORI6EV6j475e5mugn7KKrTc6.RVnCIu2s/aXjXDHCxLjW.', 'admin@gmail.com', '3524150311900014', '1998-01-03', 'Super USer', '085967276070', 'Jl. Sidorame, Ds. Tebluru, Kec. Solokuro, Kab. Lamongan.', 1, '2021-04-07 15:08:02', NULL),
-(4, 'users', '$2y$12$25ljTg8UPp4EJgSHY43Ln.2QQjNKoyjDupWHypbYuw/i.CA/yY02a', 'users@gmail.com', '3524150311900015', '1998-01-03', 'User Login', '085967276072', 'Jl. Sidorame, Ds. Tebluru, Kec. Solokuro, Kab. Lamongan.', 3, '2021-04-07 15:20:45', 'Image-2021-04-03_12:15:51.jpeg'),
+(4, 'users', '$2y$12$25ljTg8UPp4EJgSHY43Ln.2QQjNKoyjDupWHypbYuw/i.CA/yY02a', 'users@gmail.com', '3524150311900015', '1998-01-03', 'User Login', '085967276072', 'Jl. Sidorame, Ds. Tebluru, Kec. Solokuro, Kab. Lamongan.', 3, '2021-04-07 15:20:45', 'Image-2021-04-03_12_15_51.jpeg'),
 (6, 'user1', '$2y$12$25ljTg8UPp4EJgSHY43Ln.2QQjNKoyjDupWHypbYuw/i.CA/yY02a', 'oke@gmail.com', '3524150311900016', '2021-04-07', 'Ahmad Khoirul Amin', '085967276071', 'Jl. Sidorame, Ds. Tebluru, Kec. Solokuro, Kab. Lamongan.', 2, '2021-04-01 18:01:45', NULL);
 
 -- --------------------------------------------------------
