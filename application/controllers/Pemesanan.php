@@ -31,7 +31,7 @@ class Pemesanan extends CI_Controller {
 	{
 		$session = $this->session->userdata();
 		if(empty($session['userLogin'])){
-			redirect('/login');
+			redirect(base_url().'/login');
 		}else{
 			$where = array('jenis' => 2);
 			$data['model'] = $this->Posts_m->where($where)->result();

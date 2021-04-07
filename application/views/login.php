@@ -1,4 +1,4 @@
-<?php $this->load->view('/landing/header', ['style' => 'style="background:#001970;"'] );?>
+<?php $this->load->view('landing/header', ['style' => 'style="background:#001970;"'] );?>
 <!-- <div class="w-100 fixed-top" style="background:#001970 0% 0% no-repeat padding-box">
     head
 </div> -->
@@ -9,9 +9,9 @@
                 <div class="col-md-4 d-none d-md-block text-center rounded-left" style="background:#001970;color:#9FA8DA;">
                     <p class="welcome mt-4">Welcome</p>
                     <span style="font-weight:bold;">Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</span"><br>
-                    <img src="/assets/img/brand/Login.svg" class="mt-4" style="width:150px;" alt="login-image"/><br/>
+                    <img src="<?=base_url();?>assets/img/brand/Login.svg" class="mt-4" style="width:150px;" alt="login-image"/><br/>
 
-                    <a href="/register" class="rounded-pill btn btn-warning text-white mt-4 mb-4">Sign Up</a>
+                    <a href="register" class="rounded-pill btn btn-warning text-white mt-4 mb-4">Sign Up</a>
                 </div>
                 <div class="col-md-6 rounded-right login-form text-center p-4">
                     <p class="login-title">Login</p>
@@ -33,13 +33,13 @@
     </div>
 </div>
 
-<?php $this->load->view('/landing/footer');?>
+<?php $this->load->view('landing/footer');?>
 <script>
     $('#form-insert').on('submit',function(e){
         e.preventDefault()
         $.ajax({
             method : "POST",
-            url : "/login/login",
+            url : "login/login",
             dataType: 'json',
             data: new FormData($('#form-insert')[0]),
             contentType: false,

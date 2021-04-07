@@ -51,7 +51,7 @@
                     <div class="row align-items-center">
                       <div class="col-auto">
                         <!-- Avatar -->
-                        <img alt="Image placeholder" src="/assets/img/theme/team-1.jpg" class="avatar rounded-circle">
+                        <img alt="Image placeholder" src="<?=base_url();?>assets/img/theme/team-1.jpg" class="avatar rounded-circle">
                       </div>
                       <div class="col ml--2">
                         <div class="d-flex justify-content-between align-items-center">
@@ -78,7 +78,7 @@
                 <div class="media align-items-center">
                   <span class="avatar avatar-sm rounded-circle">
                     <img alt="Image placeholder" 
-                    src="/assets/img/imageProfile/<?php if(empty($session['userLogin']->avatar)){ echo 'default.jpeg';}
+                    src="<?=base_url();?>assets/img/imageProfile/<?php if(empty($session['userLogin']->avatar)){ echo 'default.jpeg';}
                     else{echo $session['userLogin']->avatar;}?>">
                   </span>
                   <div class="media-body  ml-2  d-none d-lg-block">

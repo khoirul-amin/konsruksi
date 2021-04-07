@@ -30,7 +30,7 @@ class Pesanan extends CI_Controller {
 	{
 		$session = $this->session->userdata();
 		if(empty($session['userLogin'])){
-			redirect('/login');
+			redirect(base_url().'login');
 		}else{
 			$data = $session['userLogin'];
 			$this->load->view('/admin/pesanan', $data);
@@ -48,6 +48,7 @@ class Pesanan extends CI_Controller {
 	}
 
 	public function get_datatables1(){
+		$url = base_url();
 		$session = $this->session->userdata();
 		
         $where = array('user_id' => $session['userLogin']->id);
@@ -76,7 +77,7 @@ class Pesanan extends CI_Controller {
 			}
             $desain_rumah = "";
             if(!empty($pesanan->desain_rumah)){
-                $desain_rumah = "<a download href='/assets/pdfUpload/$pesanan->desain_rumah' class='btn btn-success btn-sm'>
+                $desain_rumah = "<a download href='$url/assets/pdfUpload/$pesanan->desain_rumah' class='btn btn-success btn-sm'>
                     <i class='far fa-file-alt'></i> Download Desain
                 </a>";
             }
@@ -97,7 +98,7 @@ class Pesanan extends CI_Controller {
 			$row[] = '<td>'.$admin.'</td>';
 			$row[] = '<td>'.$status.'</td>';
 			$row[] = "<td>
-						<a href='/user/proyek/cetak/$pesanan->id' class='btn btn-success btn-sm'><i class='far fa-file-alt'></i> Cetak RAB</a>
+						<a href='$url/user/proyek/cetak/$pesanan->id' class='btn btn-success btn-sm'><i class='far fa-file-alt'></i> Cetak RAB</a>
 						$desain_rumah $button_bukti
 					</td>";
 

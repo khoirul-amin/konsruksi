@@ -25,12 +25,12 @@
   <!-- Bootstrap CSS -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/bootstrap/bootstrap.css" type="text/css">
-  <link rel="stylesheet" href="/assets/css/custom-landing.css" type="text/css">
-  <link rel="stylesheet" href="/assets/vendor/sweetalert2/dist/sweetalert2.min.css">
-  <link rel="icon" href="/assets/img/brand/favicon.png" type="image/png">
+  <link rel="stylesheet" href="<?=base_url()?>assets/css/bootstrap/bootstrap.css" type="text/css">
+  <link rel="stylesheet" href="<?=base_url()?>assets/css/custom-landing.css" type="text/css">
+  <link rel="stylesheet" href="<?=base_url()?>assets/vendor/sweetalert2/dist/sweetalert2.min.css">
+  <link rel="icon" href="<?=base_url()?>assets/img/brand/favicon.png" type="image/png">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
-  <link rel="stylesheet" href="/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
+  <link rel="stylesheet" href="<?=base_url()?>assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
   <style>
 
   </style>
@@ -41,7 +41,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark pt-3 pb-3" <?php if(!empty($style)){echo $style;} ?> >
     <div class="container">
       <a class="navbar-brand" href="/">
-        <img src="/assets/img/brand/white.png" width="100px" alt="">
+        <img src="<?=base_url()?>assets/img/brand/white.png" width="100px" alt="">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

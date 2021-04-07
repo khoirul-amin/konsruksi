@@ -30,7 +30,7 @@
   </footer>
 </body>
 
-<script src="/assets/vendor/jquery/dist/jquery.min.js"></script>
-<script src="/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="/assets/vendor/sweetalert2/dist/sweetalert2.min.js"></script>
+<script src="<?=base_url()?>assets/vendor/jquery/dist/jquery.min.js"></script>
+<script src="<?=base_url()?>assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="<?=base_url()?>assets/vendor/sweetalert2/dist/sweetalert2.min.js"></script>
 </html>

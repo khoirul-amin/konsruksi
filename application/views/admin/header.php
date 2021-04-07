@@ -23,18 +23,18 @@
   <meta name="author" content="Creative Tim">
   <title>Konstruksi - <?php if(empty($title)){}else{echo $title;} ?></title>
   <!-- Favicon -->
-  <link rel="icon" href="/assets/img/brand/favicon.png" type="image/png">
+  <link rel="icon" href="<?=base_url();?>assets/img/brand/favicon.png" type="image/png">
   <!-- Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
   <!-- Icons -->
-  <link rel="stylesheet" href="/assets/vendor/nucleo/css/nucleo.css" type="text/css">
-  <link rel="stylesheet" href="/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
+  <link rel="stylesheet" href="<?=base_url();?>assets/vendor/nucleo/css/nucleo.css" type="text/css">
+  <link rel="stylesheet" href="<?=base_url();?>assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
   <!-- Page plugins -->
   <!-- Argon CSS -->
-  <link rel="stylesheet" href="/assets/css/argon.css?v=1.2.0" type="text/css">
+  <link rel="stylesheet" href="<?=base_url();?>assets/css/argon.css?v=1.2.0" type="text/css">
   <!-- Data Table -->
-  <link rel="stylesheet" href="/assets/vendor/sweetalert2/dist/sweetalert2.min.css">
-  <link rel="stylesheet" href="/assets/vendor/datatables.net-bs4/css/dataTables.bootstrap4.min.css" type="text/css">
+  <link rel="stylesheet" href="<?=base_url();?>assets/vendor/sweetalert2/dist/sweetalert2.min.css">
+  <link rel="stylesheet" href="<?=base_url();?>assets/vendor/datatables.net-bs4/css/dataTables.bootstrap4.min.css" type="text/css">
 </head>
 <?php
   $session = $this->session->userdata();
@@ -45,8 +45,8 @@
     <div class="scrollbar-inner">
       <!-- Brand -->
       <div class="sidenav-header  align-items-center">
-        <a class="navbar-brand" href="/">
-          <img src="/assets/img/brand/blue.png" class="navbar-brand-img" alt="...">
+        <a class="navbar-brand" href="<?=base_url();?>">
+          <img src="<?=base_url();?>assets/img/brand/blue.png" class="navbar-brand-img" alt="...">
         </a>
       </div>
       <div class="navbar-inner">
@@ -55,40 +55,40 @@
           <!-- Nav items -->
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link <?php if($this->uri->segment('2') == 'home'){echo 'active';} ?>" href="/user/home">
+              <a class="nav-link <?php if($this->uri->segment('2') == 'home'){echo 'active';} ?>" href="<?=base_url();?>user/home">
                 <i class="ni ni-tv-2 text-primary"></i>
                 <span class="nav-link-text">Dashboard</span>
               </a>
             </li>
             <?php if($session['userLogin']->role == 2 || $session['userLogin']->role == 1){?>
             <li class="nav-item">
-              <a class="nav-link <?php if($this->uri->segment('2') == 'pelanggan'){echo 'active';} ?>" href="/user/pelanggan">
+              <a class="nav-link <?php if($this->uri->segment('2') == 'pelanggan'){echo 'active';} ?>" href="<?=base_url();?>user/pelanggan">
                 <i class="fas fa-users text-green"></i>
                 <span class="nav-link-text">Data Pelanggan</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link <?php if($this->uri->segment('2') == 'karyawan'){echo 'active';} ?>" href="/user/karyawan">
+              <a class="nav-link <?php if($this->uri->segment('2') == 'karyawan'){echo 'active';} ?>" href="<?=base_url();?>user/karyawan">
                 <i class="fas fa-users-cog text-warning"></i>
                 <span class="nav-link-text">Data Karyawan</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link <?php if($this->uri->segment('2') == 'kategori'){echo 'active';} ?>" 
-                href="/user/kategori">
+                href="<?=base_url();?>user/kategori">
                 <i class="fas fa-list text-green"></i>
                 <span class="nav-link-text">Kategori RAB</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link <?php if($this->uri->segment('2') == 'posts'){echo 'active';} ?>" 
-                href="/user/posts">
+                href="<?=base_url();?>user/posts">
                 <i class="fas fa-paste text-primary"></i>
                 <span class="nav-link-text">Posts</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link <?php if($this->uri->segment('2') == 'proyek'){echo 'active';} ?>" href="/user/proyek">
+              <a class="nav-link <?php if($this->uri->segment('2') == 'proyek'){echo 'active';} ?>" href="<?=base_url();?>user/proyek">
                 <i class="fas fa-building text-primary"></i>
                 <span class="nav-link-text">Data Proyek</span>
               </a>
@@ -96,14 +96,14 @@
             <?php }; ?>
             <?php if($session['userLogin']->role == 3){?>
             <li class="nav-item">
-              <a class="nav-link <?php if($this->uri->segment('2') == 'pesanan'){echo 'active';} ?>" href="/user/pesanan">
+              <a class="nav-link <?php if($this->uri->segment('2') == 'pesanan'){echo 'active';} ?>" href="<?=base_url();?>user/pesanan">
                 <i class="fas fa-building text-primary"></i>
                 <span class="nav-link-text">Data Pesanan</span>
               </a>
             </li>
             <?php }; ?>
             <li class="nav-item">
-              <a class="nav-link <?php if($this->uri->segment('2') == 'setting'){echo 'active';} ?>" href="/user/setting">
+              <a class="nav-link <?php if($this->uri->segment('2') == 'setting'){echo 'active';} ?>" href="<?=base_url();?>user/setting">
                 <i class="fas fa-cog text-default"></i>
                 <span class="nav-link-text">Setting</span>
               </a>

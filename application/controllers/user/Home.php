@@ -28,7 +28,7 @@ class Home extends CI_Controller {
 	{
 		$session = $this->session->userdata();
 		if(empty($session['userLogin'])){
-			redirect('/login');
+			redirect(base_url().'login');
 		}else{
 
 			$jumlah_pelanggan = $this->User_m->total_pelanggan()->result();

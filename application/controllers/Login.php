@@ -16,7 +16,7 @@ class Login extends CI_Controller {
 	 *
 	 * So any other public methods not prefixed with an underscore will
 	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
+	 * @see https://codeigniter.com_guide/general/urls.html
 	 */
 
 	function __construct(){
@@ -32,7 +32,7 @@ class Login extends CI_Controller {
 		if(empty($session['userLogin'])){
 			$this->load->view('login');
 		}else{
-			redirect('/user/home');
+			redirect(base_url().'user/home');
 		}
 	}
 
@@ -63,7 +63,7 @@ class Login extends CI_Controller {
 				$data = array('timestamps'=> date('Y-m-d H:i:s'));
 				$this->User_m->login_success($data, $where);
 				$this->session->set_userdata('userLogin',$result[0]);
-				// redirect('/user/home');
+				// redirect('user/home');
 				$response = array(
 					'status' => true,
 					'message' => "Login Berhasil."
@@ -84,6 +84,6 @@ class Login extends CI_Controller {
 
 	function logout(){
 		$this->session->sess_destroy();
-		redirect('/login');
+		redirect(base_url().'/login');
 	}
 }

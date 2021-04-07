@@ -1,4 +1,4 @@
-<?php $this->load->view('/landing/header', ['style' => 'style="background:#001970;"'] );?>
+<?php $this->load->view('landing/header', ['style' => 'style="background:#001970;"'] );?>
 <div class="row ml-0 mr-0" style="background:#DDE3F5">
     <div class="container mt-4 mb-4">
         <div class="row ml-0 mr-0 pt-md-4">
@@ -10,11 +10,11 @@
         <div class="row ml-0 mr-0 pt-md-4">
             <div class="col-md-6 pt-md-4 pl-0"></div>
             <div class="col-md-6 pt-md-4 pl-0">
-                <img src="/assets/img/theme/konstruksi.png" width="400px" alt="">
+                <img src="<?=base_url()?>assets/img/theme/konstruksi.png" width="400px" alt="">
             </div>
         </div>
     </div>
 </div>
 
-<?php $this->load->view('/landing/footer');?>
+<?php $this->load->view('landing/footer');?>
 

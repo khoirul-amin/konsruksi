@@ -63,7 +63,7 @@ class Proyek extends CI_Controller {
 			$row[] = '<td>'.$pesanan->nama.'</td>';
 			$row[] = '<td>'.$pesanan->tanggal.'</td>';
 			// $row[] = "<td>
-			// 			<a href='/user/proyek/pesanan/$pesanan->id' class='btn btn-success btn-sm'><i class='far fa-file-alt'></i> File RAB</a>
+			// 			<a href='user/proyek/pesanan/$pesanan->id' class='btn btn-success btn-sm'><i class='far fa-file-alt'></i> File RAB</a>
 			// 		</td>";
 			$row[] = "<td>
 						<button type='button' class='btn btn-primary btn-sm'
@@ -85,6 +85,7 @@ class Proyek extends CI_Controller {
         echo json_encode($output);
 	}
 	public function get_datatables1(){
+		$url = base_url();
 		$result = $this->Pemesanan_m->v_proses()->result();
 		$data = array();
 
@@ -126,7 +127,7 @@ class Proyek extends CI_Controller {
 			$row[] = '<td>'.$pesanan->admin.'</td>';
 			$row[] = '<td>'.$status.'</td>';
 			$row[] = "<td>
-						<a href='/user/proyek/rab/$pesanan->id' class='btn btn-success btn-sm'><i class='far fa-file-alt'></i> Buat RAB</a>
+						<a href='$url/user/proyek/rab/$pesanan->id' class='btn btn-success btn-sm'><i class='far fa-file-alt'></i> Buat RAB</a>
 					
 						<button type='button' class='btn btn-primary btn-sm'
 						onclick=\"updateInformasi('$pesanan->id')\"

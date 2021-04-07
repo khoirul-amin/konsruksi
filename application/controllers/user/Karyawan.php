@@ -29,10 +29,10 @@ class Karyawan extends CI_Controller {
 	{
 		$session = $this->session->userdata();
 		if(empty($session['userLogin'])){
-			redirect('/login');
+			redirect(base_url().'login');
 		}else{
 			$data = $session['userLogin'];
-			$this->load->view('/admin/karyawan', $data);
+			$this->load->view('admin/karyawan', $data);
 		}
 		// $this->load->view('/admin/karyawan');
 	}

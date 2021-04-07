@@ -1,10 +1,10 @@
 
-  <?php $this->load->view('/admin/header', [ 'title' => 'Data Pelanggan']);?>
+  <?php $this->load->view('admin/header', [ 'title' => 'Data Pelanggan']);?>
 
 <!-- Main content -->
 
 <div class="main-content" id="panel">
-  <?php $this->load->view('/admin/topnav')?>
+  <?php $this->load->view('admin/topnav')?>
 
   <!-- Header -->
   <div class="header pb-6">
@@ -50,7 +50,7 @@
     </div>
     <!-- Footer -->
     
-    <?php $this->load->view('/admin/footer');?>
+    <?php $this->load->view('admin/footer');?>
   </div>
 
     <!-- Modal Input -->
@@ -112,22 +112,7 @@
 
 
 
-  <!-- Argon Scripts -->
-  <!-- Core -->
-  <script src="/assets/vendor/jquery/dist/jquery.min.js"></script>
-  <script src="/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="/assets/vendor/js-cookie/js.cookie.js"></script>
-  <script src="/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
-  <script src="/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
-  <!-- DataTables -->
-  <script src="/assets/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
-  <script src="/assets/vendor/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-  <script src="/assets/vendor/sweetalert2/dist/sweetalert2.min.js"></script>
-  <!-- Optional JS -->
-  <script src="/assets/vendor/chart.js/dist/Chart.min.js"></script>
-  <script src="/assets/vendor/chart.js/dist/Chart.extension.js"></script>
-  <!-- Argon JS -->
-  <script src="/assets/js/argon.js?v=1.2.0"></script>
+<?php $this->load->view('admin/script');?>
   <script>
     // $(document).ready( function () {
     //   $('#tables').DataTable();
@@ -147,7 +132,7 @@
     function updateInformasi(id){
       $.ajax({
           type: "GET",
-          url: `/user/pelanggan/getByID/${id}`,
+          url: `<?=base_url();?>user/pelanggan/getByID/${id}`,
           cache: false,
           success: function(data){
               const dataOk = JSON.parse(data)
@@ -168,7 +153,7 @@
       e.preventDefault()
       if($('#id').val() === ''){
           $.ajax({
-              url: "/user/pelanggan/insertdata",
+              url: "<?=base_url();?>user/pelanggan/insertdata",
               method: 'POST',
               type: 'POST',
               dataType: 'json',
@@ -202,7 +187,7 @@
           })
       }else{
           $.ajax({
-              url: "/user/pelanggan/updatedata",
+              url: "<?=base_url();?>user/pelanggan/updatedata",
               method: 'POST',
               type: 'POST',
               dataType: 'json',
@@ -243,7 +228,7 @@
         if (result.value) {
           $.ajax({
               type: "GET",
-              url: `/user/pelanggan/hapusdata/${id}`,
+              url: `<?=base_url();?>user/pelanggan/hapusdata/${id}`,
               cache: false,
               success: function(data){
                 var data = JSON.parse(data)
@@ -274,7 +259,7 @@
         if (result.value) {
           $.ajax({
               type: "GET",
-              url: `/user/pelanggan/lupapassword/${id}`,
+              url: `user/pelanggan/lupapassword/${id}`,
               cache: false,
               success: function(data){
                 var data = JSON.parse(data)

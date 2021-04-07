@@ -1,10 +1,10 @@
 
-  <?php $this->load->view('/admin/header', [ 'title' => 'Setting Profile']);?>
+  <?php $this->load->view('admin/header', [ 'title' => 'Setting Profile']);?>
 
 <!-- Main content -->
 
 <div class="main-content" id="panel">
-  <?php $this->load->view('/admin/topnav')?>
+  <?php $this->load->view('admin/topnav')?>
 
   <!-- Header -->
   <div class="header pb-6">
@@ -86,7 +86,7 @@
     </div>
     <!-- Footer -->
     
-    <?php $this->load->view('/admin/footer');?>
+    <?php $this->load->view('admin/footer');?>
   </div>
 
     <!-- Modal Input -->
@@ -120,16 +120,7 @@
 
 
 
-  <!-- Argon Scripts -->
-  <!-- Core -->
-  <script src="/assets/vendor/jquery/dist/jquery.min.js"></script>
-  <script src="/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="/assets/vendor/js-cookie/js.cookie.js"></script>
-  <script src="/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
-  <script src="/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
-  <script src="/assets/vendor/sweetalert2/dist/sweetalert2.min.js"></script>
-  <!-- Argon JS -->
-  <script src="/assets/js/argon.js?v=1.2.0"></script>
+<?php $this->load->view('admin/script');?>
   <script>
 
     getData()
@@ -137,7 +128,7 @@
       var id = <?=$user->id?>;
       $.ajax({
           type: "GET",
-          url: `/user/setting/getData/${id}`,
+          url: `<?=base_url();?>user/setting/getData/${id}`,
           cache: false,
           success: function(data){
               $('#modalForm').modal('hide')
@@ -151,7 +142,7 @@
               $('#inputNama').val(dataOk.nama);
               $('#inputTglLahir').val(dataOk.tgl_lahir);
               $('#inputAlamat').val(dataOk.alamat);
-              $('#user_img').attr("src", '/assets/img/imageProfile/'+image);
+              $('#user_img').attr("src", '<?=base_url();?>assets/img/imageProfile/'+image);
           }
       })
     }
@@ -167,7 +158,7 @@
         confirmButtonText: 'Oke'
       }).then((result) => {
         if (result.value) {
-          window.location.href = "/logout";
+          window.location.href = "<?=base_url();?>/logout";
         }
       })
     }
@@ -194,7 +185,7 @@
         }
       }
       $.ajax({
-            url: "/user/setting/updatedata",
+            url: "<?=base_url();?>user/setting/updatedata",
             method: 'POST',
             type: 'POST',
             dataType: 'json',
@@ -228,7 +219,7 @@
     $('#formUpdateData').on('submit',function(e){
         e.preventDefault()
         $.ajax({
-            url: "/user/setting/uploadimage",
+            url: "<?=base_url();?>user/setting/uploadimage",
             method: 'POST',
             type: 'POST',
             dataType: 'json',

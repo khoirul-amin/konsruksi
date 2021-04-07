@@ -1,4 +1,4 @@
-<?php $this->load->view('/landing/header', ['style' => 'style="background:#001970;"'] );?>
+<?php $this->load->view('landing/header', ['style' => 'style="background:#001970;"'] );?>
 <div class="row ml-0 mr-0" style="background:#DDE3F5">
     <div class="container mt-4 mb-4">
         <div class="row ml-0 mr-0 pt-md-4">
@@ -27,5 +27,5 @@
     </div>
 </div>
 
-<?php $this->load->view('/landing/footer');?>
+<?php $this->load->view('landing/footer');?>
 

@@ -32,7 +32,7 @@ class Register extends CI_Controller {
 		if(empty($session['userLogin'])){
 			$this->load->view('register');
 		}else{
-			redirect('/user/home');
+			redirect(base_url().'user/home');
 		}
 	}
 	

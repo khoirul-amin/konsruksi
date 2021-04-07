@@ -1,10 +1,10 @@
 
-  <?php $this->load->view('/admin/header', [ 'title' => 'Data Proyek']);?>
+  <?php $this->load->view('admin/header', [ 'title' => 'Data Proyek']);?>
 
 <!-- Main content -->
 
 <div class="main-content" id="panel">
-  <?php $this->load->view('/admin/topnav')?>
+  <?php $this->load->view('admin/topnav')?>
 
   <!-- Header -->
   <div class="header pb-6">
@@ -46,7 +46,7 @@
     </div>
     <!-- Footer -->
     
-    <?php $this->load->view('/admin/footer');?>
+    <?php $this->load->view('admin/footer');?>
   </div>
 
     <!-- Modal Input -->
@@ -102,22 +102,7 @@
         </div>
     </div>
 
-  <!-- Argon Scripts -->
-  <!-- Core -->
-  <script src="/assets/vendor/jquery/dist/jquery.min.js"></script>
-  <script src="/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="/assets/vendor/js-cookie/js.cookie.js"></script>
-  <script src="/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
-  <script src="/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
-  <!-- DataTables -->
-  <script src="/assets/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
-  <script src="/assets/vendor/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-  <script src="/assets/vendor/sweetalert2/dist/sweetalert2.min.js"></script>
-  <!-- Optional JS -->
-  <script src="/assets/vendor/chart.js/dist/Chart.min.js"></script>
-  <script src="/assets/vendor/chart.js/dist/Chart.extension.js"></script>
-  <!-- Argon JS -->
-  <script src="/assets/js/argon.js?v=1.2.0"></script>
+    <?php $this->load->view('admin/script');?>
   <script>
     getData()
     function getData(){
@@ -131,7 +116,7 @@
         });
     }
     function viewBukti(url){
-        var url = '/assets/img/imageUpload/'+url;
+        var url = '<?=base_url();?>assets/img/imageUpload/'+url;
         $('#img_bukti').attr("src", url)
     }
   

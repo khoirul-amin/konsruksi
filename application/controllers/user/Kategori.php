@@ -29,9 +29,9 @@ class Kategori extends CI_Controller {
 	{
 		$session = $this->session->userdata();
 		if(empty($session['userLogin'])){
-			redirect('/login');
+			redirect(base_url().'login');
 		}else{
-			$this->load->view('/admin/kategori_rab');
+			$this->load->view('admin/kategori_rab');
 		}
 	}
     public function get_datatables(){

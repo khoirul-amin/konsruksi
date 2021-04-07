@@ -28,12 +28,12 @@ class Setting extends CI_Controller {
 	{
 		$session = $this->session->userdata();
 		if(empty($session['userLogin'])){
-			redirect('/login');
+			redirect('login');
 		}else{
 			$where = array('id' => $session['userLogin']->id);
 			$result = $this->User_m->login($where)->result();
 			$data['user'] = $result[0];
-			$this->load->view('/admin/setting',$data);
+			$this->load->view('admin/setting',$data);
 		}
 	}
 
@@ -93,6 +93,7 @@ class Setting extends CI_Controller {
 	}
 
 	public function uploadimage(){
+		$url = base_url();
 		$session = $this->session->userdata();
 		$where = array('id'=> $session['userLogin']->id);
         $cek_data = $this->User_m->login($where)->result()[0];

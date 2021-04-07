@@ -30,7 +30,7 @@ class Pesanan extends CI_Controller {
 	{
 		$session = $this->session->userdata();
 		if(empty($session['userLogin'])){
-			redirect('/login');
+			redirect(base_url().'/login');
 		}else{
 			$id = $session['userLogin']->id;
 			$where = array('user_id' => $id);

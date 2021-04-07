@@ -1,10 +1,10 @@
 
-  <?php $this->load->view('/admin/header', [ 'title' => 'Data Proyek']);?>
+  <?php $this->load->view('admin/header', [ 'title' => 'Data Proyek']);?>
 
 <!-- Main content -->
 
 <div class="main-content" id="panel">
-  <?php $this->load->view('/admin/topnav')?>
+  <?php $this->load->view('admin/topnav')?>
 
 
   <!-- Header -->
@@ -28,7 +28,7 @@
           data-toggle='modal' data-target='#modalForm'>
             <i class="fas fa-plus"></i> Tambah
           </button>
-          <a href="/user/proyek/cetak/<?=$id;?>" target="new" class="btn btn-danger mb-2 btn-sm">
+          <a href="<?=base_url();?>/user/proyek/cetak/<?=$id;?>" target="new" class="btn btn-danger mb-2 btn-sm">
             <i class="fas fa-plus"></i> Print
           </a>
         <div class="card p-2">
@@ -100,20 +100,20 @@
 
   <!-- Argon Scripts -->
   <!-- Core -->
-  <script src="/assets/vendor/jquery/dist/jquery.min.js"></script>
-  <script src="/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="/assets/vendor/js-cookie/js.cookie.js"></script>
-  <script src="/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
-  <script src="/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
+  <script src="<?=base_url()?>assets/vendor/jquery/dist/jquery.min.js"></script>
+  <script src="<?=base_url()?>assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="<?=base_url()?>assets/vendor/js-cookie/js.cookie.js"></script>
+  <script src="<?=base_url()?>assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+  <script src="<?=base_url()?>assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
   <!-- DataTables -->
-  <script src="/assets/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
-  <script src="/assets/vendor/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-  <script src="/assets/vendor/sweetalert2/dist/sweetalert2.min.js"></script>
+  <script src="<?=base_url()?>assets/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
+  <script src="<?=base_url()?>assets/vendor/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+  <script src="<?=base_url()?>assets/vendor/sweetalert2/dist/sweetalert2.min.js"></script>
   <!-- Optional JS -->
-  <script src="/assets/vendor/chart.js/dist/Chart.min.js"></script>
-  <script src="/assets/vendor/chart.js/dist/Chart.extension.js"></script>
+  <script src="<?=base_url()?>assets/vendor/chart.js/dist/Chart.min.js"></script>
+  <script src="<?=base_url()?>assets/vendor/chart.js/dist/Chart.extension.js"></script>
   <!-- Argon JS -->
-  <script src="/assets/js/argon.js?v=1.2.0"></script>
+  <script src="<?=base_url()?>assets/js/argon.js?v=1.2.0"></script>
   <script>
     getData()
     function getData(){
@@ -130,7 +130,7 @@
     function updateInformasi(id){
       $.ajax({
           type: "GET",
-          url: `/user/proyek/getByID/${id}`,
+          url: `<?=base_url()?>user/proyek/getByID/${id}`,
           cache: false,
           success: function(data){
               const dataOk = JSON.parse(data)
@@ -145,7 +145,7 @@
     $('#formUpdateData').on('submit',function(e){
       e.preventDefault()
       $.ajax({
-          url: "/user/proyek/insertRab",
+          url: "user/proyek/insertRab",
           method: 'POST',
           type: 'POST',
           dataType: 'json',

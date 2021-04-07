@@ -30,9 +30,9 @@ class Posts extends CI_Controller {
 	{
 		$session = $this->session->userdata();
 		if(empty($session['userLogin'])){
-			redirect('/login');
+			redirect(base_url().'login');
 		}else{
-			$this->load->view('/admin/posts');
+			$this->load->view('admin/posts');
 		}
 	}
     public function get_datatables(){

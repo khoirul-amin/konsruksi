@@ -1,4 +1,4 @@
-<?php $this->load->view('/landing/header', ['style' => 'style="background:#001970;"'] );?>
+<?php $this->load->view('landing/header', ['style' => 'style="background:#001970;"'] );?>
 <div class="row ml-0 mr-0" style="background:#DDE3F5;height:500px">
     <div class="container mt-4 mb-4">
         <div class="row ml-0 mr-0 pt-md-4 mb-md-4 rounded shadow justify-content-md-center bg-light" style="color:#707070;">
@@ -37,11 +37,11 @@
                                 if($pesanan->status != 3){
                                     if(empty($pesanan->bukti_pembayaran)){
                                         echo  "
-                                        <a href='/user/pesanan' class='btn btn-sm btn-outline-primary'>Lihat RAB</a>
+                                        <a href='user/pesanan' class='btn btn-sm btn-outline-primary'>Lihat RAB</a>
                                         <button data-toggle='modal' onClick=\"setID('$pesanan->id')\" data-target='#modalForm' class='btn btn-sm btn-outline-primary'>Bayar</button>";
                                     }else{
                                         echo  '
-                                        <a href="/user/pesanan" class="btn btn-sm btn-outline-primary">Lihat RAB</a>';
+                                        <a href="user/pesanan" class="btn btn-sm btn-outline-primary">Lihat RAB</a>';
                                     }
                                 }else {
                                     echo "<br><br>";
@@ -122,19 +122,19 @@
             </form>
         </div>
     </div>
-<?php $this->load->view('/landing/footer');?>
+<?php $this->load->view('landing/footer');?>
 
 
 <script>
     function viewInformasi(id){
         $.ajax({
             type: "GET",
-            url: `/user/posts/getByID/${id}`,
+            url: `<?=base_url()?>/user/posts/getByID/${id}`,
             cache: false,
             success: function(data){
                 const dataOk = JSON.parse(data)
                 $('#judul').html(dataOk.judul)
-                $('#gambar').attr("src", '/assets/img/imageUpload/'+dataOk.image)
+                $('#gambar').attr("src", '<?=base_url()?>assets/img/imageUpload/'+dataOk.image)
                 $('#desk').html(dataOk.isi)
             }
         })
@@ -146,7 +146,7 @@
     $('#formUpdateData').on('submit',function(e){
         e.preventDefault()
         $.ajax({
-            url: "/pemesanan/uploadslip",
+            url: "<?=base_url();?>pemesanan/uploadslip",
             method: 'POST',
             type: 'POST',
             dataType: 'json',

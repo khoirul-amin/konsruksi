@@ -1,4 +1,4 @@
-<?php $this->load->view('/landing/header', ['style' => 'style="background:#001970;"'] );?>
+<?php $this->load->view('landing/header', ['style' => 'style="background:#001970;"'] );?>
 <div class="row ml-0 mr-0">
     <div class="container mt-4 mb-4">
         <form class="" action="" id="formUpdateData">
@@ -105,14 +105,14 @@
     </div>
 </div>
 
-<?php $this->load->view('/landing/footer');?>
+<?php $this->load->view('landing/footer');?>
 
 <script>
 
 $('#formUpdateData').on('submit',function(e){
     e.preventDefault()
     $.ajax({
-        url: "/pemesanan/pesan",
+        url: "pemesanan/pesan",
         method: 'POST',
         type: 'POST',
         dataType: 'json',
@@ -130,7 +130,7 @@ $('#formUpdateData').on('submit',function(e){
             confirmButtonText: 'Oke',
             confirmButtonColor: '#3085d6',
         }).then((result) => {
-            window.location = "/pesanan";
+            window.location = "pesanan";
         })
     }else{
         Swal.fire(
