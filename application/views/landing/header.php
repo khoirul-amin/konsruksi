@@ -40,7 +40,7 @@
     
   <nav class="navbar navbar-expand-lg navbar-dark pt-3 pb-3" <?php if(!empty($style)){echo $style;} ?> >
     <div class="container">
-      <a class="navbar-brand" href="/">
+      <a class="navbar-brand" href="<?=base_url()?>">
         <img src="<?=base_url()?>assets/img/brand/white.png" width="100px" alt="">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,19 +50,19 @@
       <div class="collapse navbar-collapse w-100 justify-content-end" id="navbarSupportedContent">
           <ul class="navbar-nav" style="margin-right:120px;">
             <li class="nav-item mr-4 <?php if($this->uri->segment(1) == 'pemesanan'){echo 'active';}; ?>">
-              <a class="nav-link" href="/pemesanan">Pemesanan</a>
+              <a class="nav-link" href="<?=base_url()?>pemesanan">Pemesanan</a>
             </li>
             <li class="nav-item mr-4 <?php if($this->uri->segment(1) == 'kontak'){echo 'active';}; ?>">
-              <a class="nav-link" href="/kontak">Kontak</a>
+              <a class="nav-link" href="<?=base_url()?>kontak">Kontak</a>
             </li>
             <li class="nav-item mr-4  <?php if($this->uri->segment(1) == 'tentangkami'){echo 'active';}; ?>">
-              <a class="nav-link" href="/tentangkami">Tentang Kami</a>
+              <a class="nav-link" href="<?=base_url()?>tentangkami">Tentang Kami</a>
             </li>
           </ul>
           <div class="">
-            <a href="/pesanan" class="btn mr-lg-4 text-white"><i class="fas fa-shopping-bag"></i></a>
-            <a href="/register" class="btn btn-outline-warning mr-lg-4 text-white">Sign Up</a>
-            <a href="/login" class="btn btn-warning text-white">Sign In</a>
+            <a href="<?=base_url()?>pesanan" class="btn mr-lg-4 text-white"><i class="fas fa-shopping-bag"></i></a>
+            <a href="<?=base_url()?>register" class="btn btn-outline-warning mr-lg-4 text-white">Sign Up</a>
+            <a href="<?=base_url()?>login" class="btn btn-warning text-white">Sign In</a>
           </div>
       </div>
     </div>
