@@ -30,7 +30,7 @@ class Proyek extends CI_Controller {
 	{
 		$session = $this->session->userdata();
 		if(empty($session['userLogin'])){
-			redirect('/login');
+			redirect(<?=base_url()?>.'/login');
 		}else{
 			$data = $session['userLogin'];
 			$this->load->view('/admin/proyek', $data);
@@ -49,6 +49,7 @@ class Proyek extends CI_Controller {
 
 
 	public function get_datatables(){
+		$url = base_url();
 		$result = $this->Pemesanan_m->v_menunggu()->result();
 		$data = array();
 
@@ -63,7 +64,7 @@ class Proyek extends CI_Controller {
 			$row[] = '<td>'.$pesanan->nama.'</td>';
 			$row[] = '<td>'.$pesanan->tanggal.'</td>';
 			// $row[] = "<td>
-			// 			<a href='user/proyek/pesanan/$pesanan->id' class='btn btn-success btn-sm'><i class='far fa-file-alt'></i> File RAB</a>
+			// 			<a href='$url/user/proyek/pesanan/$pesanan->id' class='btn btn-success btn-sm'><i class='far fa-file-alt'></i> File RAB</a>
 			// 		</td>";
 			$row[] = "<td>
 						<button type='button' class='btn btn-primary btn-sm'
@@ -350,7 +351,7 @@ class Proyek extends CI_Controller {
 
 		$this->load->library('upload');
 		$this->load->helper('file');
-		$pdf_name = 'pdf-'.date("Y-m-d_H:i:s");
+		$pdf_name = 'pdf-'.date("Y-m-d_H_i_s");
 		$tipe_pdf = pathinfo($_FILES["pdf"]["name"], PATHINFO_EXTENSION);
 		$file_name =  $pdf_name.'.'.$tipe_pdf;
 
