@@ -145,7 +145,7 @@
     $('#formUpdateData').on('submit',function(e){
       e.preventDefault()
       $.ajax({
-          url: "user/proyek/insertRab",
+          url: "<?=base_url()?>user/proyek/insertRab",
           method: 'POST',
           type: 'POST',
           dataType: 'json',
