@@ -115,7 +115,7 @@
                   </span>
                 </span>
                 <div class="dropdown-divider"></div>
-                <a href="/login/logout" class="dropdown-item">
+                <a href="<?=base_url()?>login/logout" class="dropdown-item">
                   <i class="ni ni-user-run"></i>
                   <span>Logout</span>
                 </a>
