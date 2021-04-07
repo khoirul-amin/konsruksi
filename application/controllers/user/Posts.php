@@ -105,7 +105,7 @@ class Posts extends CI_Controller {
         if($_FILES["image"]["name"]){
             $this->load->library('upload');
             $this->load->helper('file');
-            $image_name = 'Image-'.date("Y-m-d_H:i:s");
+            $image_name = 'Image-'.date("Y-m-d_H_i_s");
             $tipe_image = pathinfo($_FILES["image"]["name"], PATHINFO_EXTENSION);
             $file_name =  $image_name.'.'.$tipe_image;
 
@@ -168,7 +168,7 @@ class Posts extends CI_Controller {
         if($_FILES["image"]["name"]){
             $this->load->library('upload');
             $this->load->helper('file');
-            $image_name = 'Image-'.date("Y-m-d_H:i:s");
+            $image_name = 'Image-'.date("Y-m-d_H_i_s");
             $tipe_image = pathinfo($_FILES["image"]["name"], PATHINFO_EXTENSION);
             $file_name =  $image_name.'.'.$tipe_image;
 
