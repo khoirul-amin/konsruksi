@@ -42,6 +42,8 @@ class Pemesanan extends CI_Controller {
 
 	public function pesan(){
 		$session = $this->session->userdata();
+		$max =  $this->Pemesanan_m->max()->result()[0];
+		$invoice = 'B00'.($max->id+1);
 
 		$id_user = $session['userLogin']->id;
 		$ukuran = $this->input->post('ukuran');
@@ -58,6 +60,7 @@ class Pemesanan extends CI_Controller {
 		$data = array(
 			'user_id' => $id_user,
 			'ukuran' => $ukuran,
+			'invoice' => $invoice,
 			'lantai' => $lantai,
 			'luas_bangunan' => $luas_bangunan,
 			'id_model' => $id_model,

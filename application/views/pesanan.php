@@ -37,11 +37,11 @@
                                 if($pesanan->status != 3){
                                     if(empty($pesanan->bukti_pembayaran)){
                                         echo  "
-                                        <a href='/user/proyek' class='btn btn-sm btn-outline-primary'>Lihat RAB</a>
+                                        <a href='/user/pesanan' class='btn btn-sm btn-outline-primary'>Lihat RAB</a>
                                         <button data-toggle='modal' onClick=\"setID('$pesanan->id')\" data-target='#modalForm' class='btn btn-sm btn-outline-primary'>Bayar</button>";
                                     }else{
                                         echo  '
-                                        <a href="/user/proyek" class="btn btn-sm btn-outline-primary">Lihat RAB</a>';
+                                        <a href="/user/pesanan" class="btn btn-sm btn-outline-primary">Lihat RAB</a>';
                                     }
                                 }else {
                                     echo "<br><br>";

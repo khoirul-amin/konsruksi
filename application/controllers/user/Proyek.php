@@ -111,6 +111,13 @@ class Proyek extends CI_Controller {
 			}elseif($pesanan->status == 5){
 				$status = "Selesai";
 			}
+			$button_bukti = "";
+			if(!empty($pesanan->bukti_pembayaran)){
+				$button_bukti = "<button type='button' class='btn btn-success btn-sm'
+				data-toggle='modal' data-target='#modalBukti'
+				onclick=\"viewBukti('$pesanan->bukti_pembayaran')\"
+				><i class='fas fa-eye'></i> Bukti Pembayaran</button>";
+			}
 
 			$row[] = '<td>'.$no1.'</td>';
 			$row[] = '<td>'.$pesanan->invoice.'</td>';
@@ -129,7 +136,7 @@ class Proyek extends CI_Controller {
 						data-toggle='modal' data-target='#modalView'
 						onclick=\"viewInformasi('$pesanan->id')\"
 						><i class='fas fa-eye'></i> Cetak Pesanan</button>
-						$btn_rab
+						$btn_rab $button_bukti
 					</td>";
 
 			$data[] = $row;

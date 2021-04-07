@@ -245,6 +245,23 @@
         </div>
     </div>
 
+    <!-- Modal Bukti -->
+    <div class="modal fade" id="modalBukti" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="modalFormLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalFormLabel">Bukti Pembayaran</h5>
+                    <button type="button" onclick="clearForm('formUpdateData')" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="" width="300px" alt="bukti" id="img_bukti">
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Modal Upload Berkas -->
     <div class="modal fade" id="modalUpload" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="modalFormLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
@@ -308,6 +325,11 @@
                 cache: false,
             },
         });
+    }
+
+    function viewBukti(url){
+        var url = '/assets/img/imageUpload/'+url;
+        $('#img_bukti').attr("src", url)
     }
 
     function updateInformasi(id){

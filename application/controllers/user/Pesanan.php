@@ -81,6 +81,15 @@ class Pesanan extends CI_Controller {
                 </a>";
             }
 
+			$button_bukti = "";
+			if(!empty($pesanan->bukti_pembayaran)){
+				$button_bukti = "<button type='button' class='btn btn-success btn-sm'
+				data-toggle='modal' data-target='#modalBukti'
+				onclick=\"viewBukti('$pesanan->bukti_pembayaran')\"
+				><i class='fas fa-eye'></i> Bukti Pembayaran</button>";
+			}
+
+
 			$row[] = '<td>'.$no1.'</td>';
 			$row[] = '<td>'.$pesanan->invoice.'</td>';
 			$row[] = '<td>'.$pesanan->nama.'</td>';
@@ -89,7 +98,7 @@ class Pesanan extends CI_Controller {
 			$row[] = '<td>'.$status.'</td>';
 			$row[] = "<td>
 						<a href='/user/proyek/cetak/$pesanan->id' class='btn btn-success btn-sm'><i class='far fa-file-alt'></i> Cetak RAB</a>
-						$desain_rumah
+						$desain_rumah $button_bukti
 					</td>";
 
 			$data[] = $row;

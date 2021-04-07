@@ -27,4 +27,8 @@ class Pemesanan_m extends CI_Model{
     function insert($post){
         return $this->db->insert('pemesanan', $post);
     }
+
+    function max(){
+        return $this->db->query('SELECT MAX(id) AS id FROM pemesanan');
+    }
 }
