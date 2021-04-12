@@ -28,7 +28,7 @@ class Setting extends CI_Controller {
 	{
 		$session = $this->session->userdata();
 		if(empty($session['userLogin'])){
-			redirect('login');
+			redirect(base_url().'login');
 		}else{
 			$where = array('id' => $session['userLogin']->id);
 			$result = $this->User_m->login($where)->result();
@@ -101,19 +101,19 @@ class Setting extends CI_Controller {
         if($_FILES["image"]["name"]){
             $this->load->library('upload');
             $this->load->helper('file');
-            $image_name = 'Image-'.date("Y-m-d_H:i:s");
+            $image_name = 'Image-'.date("Y-m-d_H_i_s");
             $tipe_image = pathinfo($_FILES["image"]["name"], PATHINFO_EXTENSION);
             $file_name =  $image_name.'.'.$tipe_image;
 
-            $config['upload_path']          = 'assets/img/imageProfile';
+            $config['upload_path']          = './assets/img/imageProfile';
             $config['allowed_types']        = 'jpg|png|jpeg';
             $config['file_name'] = $file_name;
     
             $this->upload->initialize($config);
             $this->upload->do_upload('image');
 			if(!empty($cek_data->avatar)){
-				if(file_exists('assets/img/imageProfile/'.$cek_data->avatar)){
-					unlink('assets/img/imageProfile/'.$cek_data->avatar);
+				if(file_exists('./assets/img/imageProfile/'.$cek_data->avatar)){
+					unlink('./assets/img/imageProfile/'.$cek_data->avatar);
 				}
 			}
 			$data = array(

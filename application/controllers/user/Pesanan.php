@@ -131,7 +131,7 @@ class Pesanan extends CI_Controller {
 	public function rab($id){
 		$session = $this->session->userdata();
 		if(empty($session['userLogin'])){
-			redirect(<?=base_url()?>.'/login');
+			redirect(base_url().'/login');
 		}else{
 			// $rab =  $this->Rab_m->where($where)->result();
 			$kategori =  $this->Kategori_m->get_all()->result();

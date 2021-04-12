@@ -7,7 +7,7 @@
               &copy; 2020 <a href="user/home" class="font-weight-bold ml-1" target="_blank">Konstruksi</a>
             </div>
           </div>
-          <div class="col-lg-6">
+          <!-- <div class="col-lg-6">
             <ul class="nav nav-footer justify-content-center justify-content-lg-end">
               <li class="nav-item">
                 <a href="https://www.creative-tim.com" class="nav-link" target="_blank">Creative Tim</a>
@@ -22,6 +22,6 @@
                 <a href="https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md" class="nav-link" target="_blank">MIT License</a>
               </li>
             </ul>
-          </div>
+          </div> -->
         </div>
       </footer>

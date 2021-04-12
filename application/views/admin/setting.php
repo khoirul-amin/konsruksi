@@ -158,7 +158,7 @@
         confirmButtonText: 'Oke'
       }).then((result) => {
         if (result.value) {
-          window.location.href = "<?=base_url();?>/logout";
+          window.location.href = "<?=base_url();?>login/logout";
         }
       })
     }

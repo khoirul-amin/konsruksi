@@ -55,6 +55,12 @@
           <!-- Nav items -->
           <ul class="navbar-nav">
             <li class="nav-item">
+              <a class="nav-link" href="<?=base_url();?>">
+                <i class="ni ni-tv-2 text-primary"></i>
+                <span class="nav-link-text">Home</span>
+              </a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link <?php if($this->uri->segment('2') == 'home'){echo 'active';} ?>" href="<?=base_url();?>user/home">
                 <i class="ni ni-tv-2 text-primary"></i>
                 <span class="nav-link-text">Dashboard</span>

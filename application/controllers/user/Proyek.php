@@ -30,7 +30,7 @@ class Proyek extends CI_Controller {
 	{
 		$session = $this->session->userdata();
 		if(empty($session['userLogin'])){
-			redirect(<?=base_url()?>.'/login');
+			redirect(base_url().'login');
 		}else{
 			$data = $session['userLogin'];
 			$this->load->view('/admin/proyek', $data);
@@ -355,7 +355,7 @@ class Proyek extends CI_Controller {
 		$tipe_pdf = pathinfo($_FILES["pdf"]["name"], PATHINFO_EXTENSION);
 		$file_name =  $pdf_name.'.'.$tipe_pdf;
 
-		$config['upload_path']          = 'assets/pdfUpload';
+		$config['upload_path']          = './assets/pdfUpload';
 		$config['allowed_types']        = 'pdf';
 		$config['file_name'] = $file_name;
 

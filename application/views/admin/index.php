@@ -89,6 +89,21 @@
                 <h6 class="text-light text-uppercase ls-1 mb-1">Overview</h6>
                 <h5 class="h3 text-white mb-0">Total Pesanan Tiap Bulan</h5>
               </div>
+              <div class="mr-3 ml-auto">
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Pilih Tahun
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <?php $thn = 2021; 
+                      for($thn; $thn<=date('Y'); $thn++){
+                        echo "<a href='#' onclick='event.preventDefault();coba(".$thn.")' class='dropdown-item'>".$thn."</a>";
+                      }
+                    ?>
+                    
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div class="card-body">
@@ -122,75 +137,72 @@
   <script src="<?=base_url();?>assets/js/argon.js?v=1.2.0"></script>
 </body>
 <script>
-  // var SalesChart = (function() {
+    // Variables
 
-  //   // Variables
-
-  //   var $chart = $('#chart-sales-dark');
+    var $chart = $('#chart-sales-dark');
 
 
-  //   // Methods
+    // Methods
 
-  //   function init($chart) {
-
-  //     var salesChart = new Chart($chart, {
-  //       type: 'line',
-  //       options: {
-  //         scales: {
-  //           yAxes: [{
-  //             gridLines: {
-  //               lineWidth: 1,
-  //               color: Charts.colors.gray[900],
-  //               zeroLineColor: Charts.colors.gray[900]
-  //             },
-  //             ticks: {
-  //               callback: function(value) {
-  //                 if (!(value % 10)) {
-  //                   return '$' + value + 'k';
-  //                 }
-  //               }
-  //             }
-  //           }]
-  //         },
-  //         tooltips: {
-  //           callbacks: {
-  //             label: function(item, data) {
-  //               var label = data.datasets[item.datasetIndex].label || '';
-  //               var yLabel = item.yLabel;
-  //               var content = '';
-
-  //               if (data.datasets.length > 1) {
-  //                 content += '<span class="popover-body-label mr-auto">' + label + '</span>';
-  //               }
-
-  //               content += '<span class="popover-body-value">$' + yLabel + 'k</span>';
-  //               return content;
-  //             }
-  //           }
-  //         }
-  //       },
-  //       data: {
-  //         labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-  //         datasets: [{
-  //           label: 'Performance',
-  //           data: [0, 20, 10, 30, 15, 40, 20, 60, 60]
-  //         }]
-  //       }
-  //     });
-
-  //     // Save to jQuery object
-
-  //     $chart.data('chart', salesChart);
-
-  //   };
+    function init($chart,tahun) {
+      var dataJson = {
+        'tahun' : tahun
+      }
+      $.ajax({
+            url: "<?=base_url();?>user/home/overview",
+            method: 'POST',
+            type: 'POST',
+            dataType: 'json',
+            data: dataJson,
+        }).done(function (dataRes, textStatus, jqXHR){
+          console.log(dataRes)
+            var salesChart = new Chart($chart, {
+              type: 'line',
+              options: {
+                scales: {
+                  yAxes: [{
+                    gridLines: {
+                      lineWidth: 1,
+                      color: Charts.colors.gray[900],
+                      zeroLineColor: Charts.colors.gray[900]
+                    }
+                  }]
+                },
+              },
+              data: {
+                // labels: ['jan', 'Feb', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                labels: dataRes.bulan,
+                datasets: [{
+                  label: 'Transaksi',
+                  // data: [10, 100, 10, 30, 15],
+                  data: dataRes.trx
+                }]
+              }
+            });
 
 
-  //   // Events
+            // Save to jQuery object
 
-  //   if ($chart.length) {
-  //     init($chart);
-  //   }
+            $chart.data('chart', salesChart);
+        }).fail(function (jqXHR, textStatus, errorThrown){
+            console.log('error')
+        })
 
-  // })(); 
+
+    };
+
+
+    // Events
+
+    if ($chart.length) {
+      init($chart,2021);
+    }
+
+    function coba(tahun){
+      if ($chart.length) {
+        init($chart,tahun);
+      }
+    }
+
 </script>
 </html>

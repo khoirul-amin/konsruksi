@@ -109,15 +109,15 @@ class Posts extends CI_Controller {
             $tipe_image = pathinfo($_FILES["image"]["name"], PATHINFO_EXTENSION);
             $file_name =  $image_name.'.'.$tipe_image;
 
-            $config['upload_path']          = 'assets/img/imageUpload';
+            $config['upload_path']          = './assets/img/imageUpload';
             $config['allowed_types']        = 'jpg|png|jpeg';
             $config['file_name'] = $file_name;
     
             $this->upload->initialize($config);
             $this->upload->do_upload('image');
 			if(!empty($cek_data->image)){
-				if(file_exists('assets/img/imageUpload/'.$cek_data->image)){
-					unlink('assets/img/imageUpload/'.$cek_data->image);
+				if(file_exists('./assets/img/imageUpload/'.$cek_data->image)){
+					unlink('./assets/img/imageUpload/'.$cek_data->image);
 				}
 			}
 
@@ -172,7 +172,7 @@ class Posts extends CI_Controller {
             $tipe_image = pathinfo($_FILES["image"]["name"], PATHINFO_EXTENSION);
             $file_name =  $image_name.'.'.$tipe_image;
 
-            $config['upload_path']          = 'assets/img/imageUpload';
+            $config['upload_path']          = './assets/img/imageUpload';
             $config['allowed_types']        = 'jpg|png|jpeg';
             $config['file_name'] = $file_name;
     

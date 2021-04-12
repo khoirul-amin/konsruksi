@@ -31,4 +31,7 @@ class Pemesanan_m extends CI_Model{
     function max(){
         return $this->db->query('SELECT MAX(id) AS id FROM pemesanan');
     }
+    function maxTrx($query){
+        return $this->db->query($query);
+    }
 }
